@@ -53,7 +53,7 @@
       notARepository = "skip";
       promptToReturnFromSubprocess = false;
       confirmOnQuit = false;
-      disableStartupPopups = true;
+      disableStartupPopups = false;
     };
   };
 }

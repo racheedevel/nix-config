@@ -56,6 +56,7 @@
   # Services
   services.userborn.enable = true;
   services.libinput.enable = true;
+  services.fprintd.enable = true;
 
   services.pipewire = {
     enable = true;

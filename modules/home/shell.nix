@@ -5,7 +5,7 @@
     enable = true;
     # autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    dotDir = ".zsh";
+    dotDir = config.home.homeDirectory + "/.zsh";
     enableVteIntegration = true;
     autocd = true;
 
@@ -116,7 +116,7 @@
   };
 
   home.sessionVariables = {
-      ZDOTDIR = ".zsh";
+      ZDOTDIR = config.home.homeDirectory + "/.zsh";
   };
 
   programs.fzf = {

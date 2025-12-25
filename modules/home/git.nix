@@ -5,12 +5,12 @@
     enable = true;
     settings = {
 
-    user.name = "racheedevel";
-    user.email = "git@rachee.dev";
+      user.name = "racheedevel";
+      user.email = "git@rachee.dev";
 
-    init.defaultBranch = "main";
-    pull.rebase = true;
-    push.autoSetupRemote = true;
+      init.defaultBranch = "main";
+      pull.rebase = true;
+      push.autoSetupRemote = true;
 
     };
   };
@@ -34,16 +34,21 @@
     enableZshIntegration = true;
     settings = {
       gui.theme = {
-          activeBorderColor = [
-              "green"
-              "bold"
-          ];
+        activeBorderColor = [
+          "green"
+          "bold"
+        ];
       };
-      gui.spinner.frames = [ "(" "‿" ")" "⁀" ];
+      gui.spinner.frames = [
+        "("
+        "‿"
+        ")"
+        "⁀"
+      ];
       gui.spinner.rate = 150;
       git = {
-          overrideGpg = true;
-          autoFetch = true;
+        overrideGpg = true;
+        autoFetch = true;
       };
       notARepository = "skip";
       promptToReturnFromSubprocess = false;

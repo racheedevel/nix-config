@@ -17,6 +17,7 @@
     wl-clipboard
     grim
     slurp
+    nwg-look
     
     # System tools
     htop

@@ -7,6 +7,8 @@
   security.polkit.enable = true;
   hardware.graphics.enable = true;
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   environment.etc."wayland-sessions/hyprland.desktop".text = ''
     [Desktop Entry]
     Name=Hyprland

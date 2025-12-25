@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory containing your scripts
-SCRIPT_DIR="$HOME/scripts/rofi"  # <-- change this if needed
+SCRIPT_DIR="$HOME/scripts/rofi"
 
 # Get list of .sh files, just names
 scripts=($(find "$SCRIPT_DIR" -maxdepth 1 -type f -name "*.sh" -exec basename {} \;))

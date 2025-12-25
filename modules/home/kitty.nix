@@ -307,6 +307,40 @@
 
   };
 
+  xdg.configFile."kitty/quick-access-terminal.conf".text = ''
+    # Override config for quick-access-terminal
+    # These settings layer on top of main kitty.conf
+
+    # ── Window class for Hyprland rules ──
+    # Note: set via command line with --class, but default:
+    # linux_display_server wayland
+
+    # ── No tab bar ──
+    tab_bar_min_tabs = 9999
+
+    # ── Minimal padding, no decorations ──
+    window_padding_width 8
+    hide_window_decorations yes
+    confirm_os_window_close 0
+
+    # ── Slightly different look (optional) ──
+    background_opacity 0.95
+
+    # ── Disable most shortcuts ──
+    clear_all_shortcuts yes
+
+    # Only essentials
+    map ctrl+c copy_and_clear_or_interrupt
+    map ctrl+v paste_from_clipboard
+    map ctrl+shift+c copy_to_clipboard
+    map ctrl+shift+v paste_from_clipboard
+    map shift+up scroll_line_up
+    map shift+down scroll_line_down
+    map shift+page_up scroll_page_up
+    map shift+page_down scroll_page_down
+    map ctrl+q close_window
+  '';
+
   home.packages = with pkgs; [
     lazygit
     btop

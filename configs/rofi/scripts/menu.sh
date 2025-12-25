@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Directory containing your scripts
 SCRIPT_DIR="$HOME/scripts/rofi"

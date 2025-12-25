@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # selection=$(find /home/rachee/docs -name "*.pdf" | rofi -dmenu -p "docs" -keep-right)
 
 function open_file() {

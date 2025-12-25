@@ -14,6 +14,11 @@
 
     };
   };
+
+  home.packages = with pkgs; [
+    github-cli
+    lazygit
+  ];
   programs.delta = {
     enable = true;
     enableGitIntegration = true;

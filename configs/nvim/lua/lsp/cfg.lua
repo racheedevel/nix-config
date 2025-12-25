@@ -14,6 +14,13 @@ SC.add_lsp("tombi", {
     root_markers = { 'Cargo.toml', 'tombi.toml', 'pyproject.toml', '.git' },
 })
 
+SC.add_lsp("nil", {
+    cmd = { 'nil' },
+    filetypes = { 'nix' },
+    root_markers = { 'flake.nix', '.git', 'flake.lock' },
+    single_file_support = true,
+})
+
 SC.add_lsp('basedpyright', { ---@type vim.lsp.Client
     cmd = { "basedpyright-langserver", "--stdio" },
     --     -- capabilities = capabilities,

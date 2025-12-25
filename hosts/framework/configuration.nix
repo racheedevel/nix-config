@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -11,10 +16,14 @@
 
   # Boot
   boot.consoleLogLevel = 0;
-  boot.kernelParams = [ "quiet" "loglevel=3" ];
+  boot.kernelParams = [
+    "quiet"
+    "loglevel=3"
+  ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.luks.devices."nixcrypt".device = "/dev/disk/by-uuid/278df479-352c-4eef-a4b8-b60a8ab6d39c";
+  boot.initrd.luks.devices."nixcrypt".device =
+    "/dev/disk/by-uuid/278df479-352c-4eef-a4b8-b60a8ab6d39c";
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Network
@@ -30,7 +39,11 @@
   users.users.rachee = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" "networkmanager" "video" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
+    ];
   };
 
   # Services
@@ -44,11 +57,14 @@
   };
 
   # Nix settings
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nixpkgs.config.allowUnfree = true;
 
   environment.sessionVariables = {
-      ZDOTDIR = "$HOME/.zsh";
+    ZDOTDIR = "$HOME/.zsh";
   };
 
   environment.pathsToLink = [ "/share/zsh" ];

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 LOCATIONS_FILE="$HOME/.settings/quick_pdf_launch_locations"
 

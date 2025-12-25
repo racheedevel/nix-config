@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 running_tmux_sessions=`tmux ls 2>/dev/null | cut -d ' ' -f1 | awk '{print substr($0, 1, length($0)-1)}'`
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 current_workspace=$(hyprctl activeworkspace -j | jq '.id')
 # IFS=$'\n' read -r -d '' -a wslist < <(hyprctl workspaces -j | jq '.[] | select(.id > 0) | .id' && printf '\0') # WORKS TOO
 mapfile -t wslist < <(hyprctl workspaces -j | jq '.[] | select(.id < 0) | .id')

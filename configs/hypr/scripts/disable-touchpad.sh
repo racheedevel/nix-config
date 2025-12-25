@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 HYPRLAND_DEVICE="pixa3854:00-093a:0274-touchpad"
 
 export STATUS_FILE="$HOME/.settings/touchpad_status"

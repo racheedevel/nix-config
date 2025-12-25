@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 wallpaper_path=$(cat ~/.settings/current_wallpaper)
 
 # if [[ -f $wallpaper_path ]]; then

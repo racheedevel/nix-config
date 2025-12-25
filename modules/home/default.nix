@@ -23,13 +23,11 @@
     # Dev tools
     rustup
     bun
-    python3
     nixfmt-rfc-style
     python315
     uv
     zig
     ruby
-    bundler
     nodejs
 
     # Day-to-day

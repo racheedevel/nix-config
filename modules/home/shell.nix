@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   programs.zsh = {
@@ -9,7 +14,6 @@
     enableVteIntegration = true;
     autocd = true;
 
-
     antidote = {
       enable = true;
       plugins = [
@@ -19,82 +23,136 @@
       ];
       useFriendlyNames = true;
     };
+
     shellAliases = {
-      ll = "eza -la";
-      ls = "eza";
+      ls = "eza --group-directories-first --color -a --icons -l -o --no-symlinks";
+      ll = "eza --group-directories-first --color -a --icons -l -o";
+      ts = "tailscale";
+      rse = "nvim Cargo.toml";
+      glabs = "GITLAB_HOST=git.securely.ai glab";
+      glabp = "GITLAB_HOST=gitlab.com glab";
+      lab = "GITLAB_HOST=git.rachee.dev glab";
+      venv = "source ./.*/*/activate";
+      t = "task -g";
+      ce = "nvim ~/.os";
+      grep = "rg --color=auto";
+      k = "kubectl";
+      h = "helm";
+      fx = "flux";
       cat = "bat";
       rebuild = "sudo nixos-rebuild switch --flake ~/.os#rachee-fw";
       update = "nix flake update ~/.os";
+      dcu = "docker compose up --build -d";
+      dcd = "docker compose down";
+      dcl = "docker compose logs -f";
+      dcr = "docker compose restart";
+      dcp = "docker compose ps";
+      dcs = "docker compose stop -t 0";
+    };
+
+    shellGlobalAliases = {
+      UUID = "$(uuidgen | tr -d \\n)";
+      G = "| grep";
+    };
+
+    sessionVariables = {
+      LISTMAX = 1500;
+      ENABLE_CORRECTION = "false";
+
+      COMPLETION_WAITING_DOTS = "false";
+      # Ignore some commands from history
+      HISTIGNORE = "&:ls:[bf]g:c:clear:history:exit:q:pwd:* --help:kubectl create secret:* -h";
+      # Timestamp format for history records
+      HIST_STAMPS = "mm/dd/yyyy";
+      # Change data path to .local/share
+      XDG_DATA_HOME = "$HOME/.local/share";
+      # Simplifies editing zsh sourced files
+      ZPROF = "$ZDOTDIR/.profile";
+      # 1Password
+      OP_BIOMETRIC_UNLOCK_ENABLED = true;
+      # Wtfis network/ip/asn sniffer
+      WTFIS_DEFAULTS = "-u -1";
+      # Minimal style adjustment for qt apps
+      QT_QPA_PLATFORMTHEME = "qt5ct";
+      # History substring search remove duplicates
+      KUBECONFIG = "$HOME/.kube/kubeconfig";
+      FOCUSRITE_MIC = "alsa_input.usb-Focusrite_Scarlett_Solo_USB_Y7ZY0HB497A3FD-00.HiFi__Mic1__source";
+      AIRPODS = "bluez_output.90_62_3F_5A_23_A4.1";
+      UV_PREVIEW = 1;
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+      LANG = "en_US.UTF-8";
+      BROWSER = "chromium";
+      SSH_ASKPASS = "/usr/lib/seahorse/ssh-askpass";
     };
 
     initContent = ''
-        unsetopt menu_complete
-        unsetopt auto_menu
-        setopt auto_list
-        setopt list_ambiguous
-        unsetopt always_last_prompt
-        setopt autocd pushdignoredups interactivecomments
-        zstyle ':completion:*' menu select
-        zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-        zstyle ':completion:*' auto-list yes
-        zstyle ':completion:*' use-compctl false
+      unsetopt menu_complete
+      unsetopt auto_menu
+      setopt auto_list
+      setopt list_ambiguous
+      unsetopt always_last_prompt
+      setopt autocd pushdignoredups interactivecomments
+      zstyle ':completion:*' menu select
+      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+      zstyle ':completion:*' auto-list yes
+      zstyle ':completion:*' use-compctl false
 
-        bindkey -e
-        bindkey -r '^I'
-        bindkey '^I' expand-or-complete
-        bindkey "^H" backward-delete-char
-        bindkey "^?" backward-delete-char
-
-
-        bindkey "^[H" beginning-of-line
-        bindkey "^[L" end-of-line
-        bindkey "^[J" down-line
-        bindkey "^[K" up-line
-        # Alt+Backspace
-        bindkey '^[^?' backward-delete-word 
-        # Alt+Delete
-        bindkey '^[^[[3~' delete-word
-        # Delete
-        bindkey '^[[3~' delete-char
-        # Alt+h: backward-word
-        bindkey '^[h' backward-word
-
-        # Alt+l: forward-word
-        bindkey '^[l' forward-word
-
-        # Alt+k: beginning-of-line
-        bindkey '^[k' beginning-of-line
-
-        # Alt+j: end-of-line
-        bindkey '^[j' end-of-line
-
-        bindkey "^[[A" history-substring-search-up
-        bindkey "^[[B" history-substring-search-down
+      bindkey -e
+      bindkey -r '^I'
+      bindkey '^I' expand-or-complete
+      bindkey "^H" backward-delete-char
+      bindkey "^?" backward-delete-char
 
 
-        typeset -gU fpath
-        _zfunc="''${ZDOTDIR:-$HOME}/.zfunc"
-        fpath=("$_zfunc" $fpath)
+      bindkey "^[H" beginning-of-line
+      bindkey "^[L" end-of-line
+      bindkey "^[J" down-line
+      bindkey "^[K" up-line
+      # Alt+Backspace
+      bindkey '^[^?' backward-delete-word 
+      # Alt+Delete
+      bindkey '^[^[[3~' delete-word
+      # Delete
+      bindkey '^[[3~' delete-char
+      # Alt+h: backward-word
+      bindkey '^[h' backward-word
 
-        # setup plugins
-        #_plugins="''${ZDOTDIR:-$HOME}/.zsh_plugins.zsh"
-        #[[ -r "$_plugins" ]] && source "$_plugins"
+      # Alt+l: forward-word
+      bindkey '^[l' forward-word
 
-        bindkey "^[[A" history-substring-search-up
-        bindkey "^[[B" history-substring-search-down
+      # Alt+k: beginning-of-line
+      bindkey '^[k' beginning-of-line
 
-        # actually load completions
-        autoload -Uz compinit
-        _compdump="''${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump-''${ZSH_VERSION}"
-        compinit -C -d "$_compdump"
-        if [[ -n {$ZDOTDIR:-$HOME} ]]; then
-            zcompdump=''${ZDOTDIR:-$HOME}/.zcompdump
-        fi
+      # Alt+j: end-of-line
+      bindkey '^[j' end-of-line
 
-        [[ -f ~/.secrets/env-secrets.sh ]] && source ~/.secrets/env-secrets.sh
+      bindkey "^[[A" history-substring-search-up
+      bindkey "^[[B" history-substring-search-down
+
+
+      typeset -gU fpath
+      _zfunc="''${ZDOTDIR:-$HOME}/.zfunc"
+      fpath=("$_zfunc" $fpath)
+
+      # setup plugins
+      #_plugins="''${ZDOTDIR:-$HOME}/.zsh_plugins.zsh"
+      #[[ -r "$_plugins" ]] && source "$_plugins"
+
+      bindkey "^[[A" history-substring-search-up
+      bindkey "^[[B" history-substring-search-down
+
+      # actually load completions
+      autoload -Uz compinit
+      _compdump="''${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump-''${ZSH_VERSION}"
+      compinit -C -d "$_compdump"
+      if [[ -n {$ZDOTDIR:-$HOME} ]]; then
+          zcompdump=''${ZDOTDIR:-$HOME}/.zcompdump
+      fi
+
+      [[ -f ~/.secrets/env-secrets.sh ]] && source ~/.secrets/env-secrets.sh
     '';
   };
-
 
   home.packages = with pkgs; [
     antidote
@@ -112,11 +170,11 @@
   # };
 
   home.file.".secrets" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/rachee/.os/secrets";
+    source = config.lib.file.mkOutOfStoreSymlink "/home/rachee/.os/secrets";
   };
 
   home.sessionVariables = {
-      ZDOTDIR = config.home.homeDirectory + "/.zsh";
+    ZDOTDIR = config.home.homeDirectory + "/.zsh";
   };
 
   programs.fzf = {
@@ -130,16 +188,16 @@
   };
 
   programs.atuin = {
-      enable = true;
-      enableZshIntegration = true;
-      flags = [ "--disable-up-arrow" ];
-      forceOverwriteSettings = true;
+    enable = true;
+    enableZshIntegration = true;
+    flags = [ "--disable-up-arrow" ];
+    forceOverwriteSettings = true;
   };
 
   programs.starship = {
-      enable = true;
-      enableZshIntegration = true;
-      enableTransience = true;
+    enable = true;
+    enableZshIntegration = true;
+    enableTransience = true;
   };
 
   xdg.configFile."starship.toml" = {

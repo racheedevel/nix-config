@@ -12,6 +12,7 @@
     ./shell.nix
     ./theme.nix
     ./waybar.nix
+    ./yazi.nix
   ];
 
   home.username = "rachee";

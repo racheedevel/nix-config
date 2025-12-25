@@ -13,6 +13,7 @@
     ../../modules/system/1password.nix
     ../../modules/system/gpu.nix
     ../../modules/system/fonts.nix
+    ../../modules/system/docker.nix
   ];
 
   # Boot

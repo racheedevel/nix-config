@@ -51,5 +51,7 @@
       ZDOTDIR = "$HOME/.zsh";
   };
 
+  environment.pathsToLink = [ "/share/zsh" ];
+
   system.stateVersion = "25.11";
 }

@@ -65,8 +65,8 @@ _zfunc="${ZDOTDIR:-$HOME}/.zfunc"
 fpath=("$_zfunc" $fpath)
 
 # setup plugins
-_plugins="${ZDOTDIR:-$HOME}/.zsh_plugins.zsh"
-[[ -r "$_plugins" ]] && source "$_plugins"
+# _plugins="${ZDOTDIR:-$HOME}/.zsh_plugins.zsh"
+# [[ -r "$_plugins" ]] && source "$_plugins"
 
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
@@ -78,7 +78,7 @@ compinit -C -d "$_compdump"
 if [[ -n {$ZDOTDIR:-$HOME} ]]; then
     zcompdump=${ZDOTDIR:-$HOME}/.zcompdump
 fi
-[[ -d $ZDOTDIR ]] && source $ZDOTDIR/.zsh_plugins.zsh
+# [[ -d $ZDOTDIR ]] && source $ZDOTDIR/.zsh_plugins.zsh
 # Prompt setup
 autoload -U promptinit; promptinit
 [[ -d $ZDOTDIR ]] && source $ZDOTDIR/pure_prompt.zsh

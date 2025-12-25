@@ -23,6 +23,7 @@
     rustup
     bun
     python3
+    nixfmt-rfc-style
 
     # Day-to-day
     chromium

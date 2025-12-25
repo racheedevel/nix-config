@@ -28,6 +28,10 @@
     unzip
     psmisc # killall / fuser / pstree / etc
     antidote
+    zsh-defer
+    go
+    rbenv
+    atuin
   ];
 
   programs.firefox.enable = true;

@@ -13,7 +13,6 @@
     antidote = {
       enable = true;
       plugins = [
-        "sindresorhus/pure"
         "zsh-users/zsh-history-substring-search"
         "zsh-users/zsh-completions kind:fpath path:src"
         "zdharma-continuum/fast-syntax-highlighting kind:defer"

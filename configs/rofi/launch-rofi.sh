@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 hyprctl dispatch focusmonitor "$(hyprctl activeworkspace -j | jq '.monitor')" > /dev/null 2>&1
 

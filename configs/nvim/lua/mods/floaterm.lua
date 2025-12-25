@@ -1,0 +1,3 @@
+-- vim.pack.add({"https://github.com/nvzone/volt"})
+-- vim.pack.add({ "https://github.com/nvzone/floaterm" })
+-- 		-- TODO cmd = "FloatermToggle",

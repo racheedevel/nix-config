@@ -1,0 +1,24 @@
+# uv
+export PATH="/home/rachee/.local/bin:$PATH"
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$(go env GOPATH)/bin"
+source $HOME/.cargo/env
+export EDITOR='nvim'
+export VISUAL='nvim'
+export EZA_CONFIG_DIR='/Users/rachee/.config/eza'
+export OP_BIOMETRIC_UNLOCK_ENABLED=true
+export WTFIS_DEFAULTS="-u -1"
+
+export SSH_ASKPASS="/usr/lib/seahorse/ssh-askpass"
+export ARCHFLAGS="-arch $(uname -m)"
+export LISTMAX=500
+ENABLE_CORRECTION="false"
+COMPLETION_WAITING_DOTS="false"
+export HISTIGNORE="&:[bf]g:c:clear:history:exit:q:pwd:* --help"
+HIST_STAMPS="mm/dd/yyyy"
+
+
+eval "$(rbenv init -)"
+
+# export ATUIN_NOBIND="true"
+eval "$(atuin init zsh)"

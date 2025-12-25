@@ -1,0 +1,5 @@
+-- vim.lsp.enable("vtsls")
+-- vim.lsp.enable("biome")
+-- vim.lsp.enable("css-lsp")
+-- vim.lsp.enable("css-variables-language-server")
+-- vim.lsp.enable("tailwindcss-language-server")

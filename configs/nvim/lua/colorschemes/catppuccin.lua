@@ -1,0 +1,68 @@
+vim.pack.add({ { src = "https://github.com/catppuccin/nvim" } })
+require('catppuccin').setup({
+    flavour = "auto",
+    transparent_background = true,
+    show_end_of_buffer = true,
+    term_colors = true,
+    styles = {
+        comments = { "italic" },
+        conditionals = { "italic" },
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
+        -- miscs = {}, -- Uncomment to turn off hard-coded styles
+    },
+    color_overrides = {},
+    custom_highlights = {},
+    default_integrations = true,
+    integrations = {
+        cmp = true,
+        -- gitsigns = true,
+        nvimtree = true,
+        treesitter = true,
+        notify = false,
+        mini = {
+            enabled = true,
+            -- indentscope_color = "",
+        },
+        dashboard = true,
+        fzf = true,
+        indent_blankline = {
+            enabled = true,
+            scope_color = "lavender",
+            colored_indent_levels = false,
+        },
+        leap = true,
+        markview = true,
+        mason = true,
+        native_lsp = {
+            enabled = true,
+            virtual_text = {
+                errors = { "italic" },
+                hints = { "italic" },
+                warnings = { "italic" },
+                information = { "italic" },
+                ok = { "italic" },
+            },
+            underlines = {
+                errors = { "underline" },
+                hints = { "underline" },
+                warnings = { "underline" },
+                information = { "underline" },
+                ok = { "underline" },
+            },
+            inlay_hints = {
+                background = true,
+            },
+        },
+        lsp_trouble = true,
+        which_key = true,
+    },
+})

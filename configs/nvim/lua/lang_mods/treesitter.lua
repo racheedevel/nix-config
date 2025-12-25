@@ -1,0 +1,52 @@
+vim.pack.add({ { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" } })
+vim.opt.runtimepath:prepend(os.getenv("HOME") .. "/.local/share/treesitter-parsers")
+require("nvim-treesitter").setup({
+    ensure_installed = {
+        "lua",
+        "vim",
+        -- "vimdoc",
+        "markdown",
+        "markdown_inline",
+        "css",
+        "dockerfile",
+        -- "bash",
+        "go",
+        -- "git_config",
+        -- "gitignore",
+        "html",
+        -- "json",
+        -- "regex",
+        -- "rust",
+        "typescript",
+        "yaml",
+        -- "typespec",
+        -- "tsx",
+        "python",
+        "toml",
+        "hyprlang",
+        "comment",
+    },
+    sync_install = true,
+    auto_install = true,
+    parser_install_dir = os.getenv("HOME") .. "/.local/share/treesitter-parsers",
+    highlight = {
+        enable = true,
+        disable = { "c", "rust" },
+        additional_vim_regex_highlighting = false,
+    },
+    indent = { enable = false },
+})
+vim.pack.add({ { src = "https://github.com/nvim-treesitter/nvim-treesitter-context" } })
+require("treesitter-context").setup({
+    enable = true,
+    multiwindow = false,
+    max_lines = 0,
+    min_window_height = 0,
+    line_numbers = true,
+    multiline_threshold = 20,
+    trim_scope = "outer",
+    mode = "cursor",
+    separator = nil,
+    zindex = 20,
+    on_attach = nil,
+})

@@ -1,0 +1,2 @@
+-- vim.lsp.enable("docker-compose-language-service")
+-- vim.lsp.enable("dockerfile-language-server")

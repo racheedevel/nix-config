@@ -13,6 +13,7 @@
     ./theme.nix
     ./waybar.nix
     ./yazi.nix
+    ./zathura.nix
   ];
 
   home.username = "rachee";

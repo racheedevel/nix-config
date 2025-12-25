@@ -169,6 +169,8 @@
     fzf
     zoxide
     lazygit
+    figlet
+    jp2a
   ];
 
   # home.file.".zsh" = {

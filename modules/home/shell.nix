@@ -150,6 +150,13 @@
           zcompdump=''${ZDOTDIR:-$HOME}/.zcompdump
       fi
 
+
+      gencompletion() {
+          local name=$1; shift
+          command -v "$name" >/dev/null || return 0
+          eval "$*" > "$_zfunc/_$name" 2>/dev/null || return 0
+      }
+
       [[ -f ~/.secrets/env-secrets.sh ]] && source ~/.secrets/env-secrets.sh
     '';
   };

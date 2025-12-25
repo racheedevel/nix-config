@@ -6,6 +6,7 @@
     ./git.nix
     ./hyprland.nix
     ./kitty.nix
+    ./kubernetes.nix
     ./neovim.nix
     ./rofi.nix
     ./shell.nix

@@ -3,11 +3,26 @@
 {
   programs.git = {
     enable = true;
+    ignores = [
+      ".direnv/"
+      ".envrc"
+      "target/"
+      ".env.local"
+      "dist"
+      ".env"
+      "dct.yml"
+      "dct.yaml"
+      "_local/"
+      ".beads/"
+      ".claude/"
+      ".claude.json"
+      "CLAUDE.md"
+      "AGENTS.md"
+      "plan/"
+    ];
     settings = {
-
       user.name = "racheedevel";
       user.email = "git@rachee.dev";
-
       init.defaultBranch = "main";
       pull.rebase = true;
       push.autoSetupRemote = true;

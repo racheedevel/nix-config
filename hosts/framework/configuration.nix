@@ -12,6 +12,7 @@
     ../../modules/system/packages.nix
     ../../modules/system/1password.nix
     ../../modules/system/gpu.nix
+    ../../modules/system/fonts.nix
   ];
 
   # Boot
@@ -44,6 +45,12 @@
       "networkmanager"
       "video"
     ];
+  };
+
+  security.sudo.enable = true;
+  security.sudo-rs = {
+      enable = true;
+      execWheelOnly = true;
   };
 
   # Services

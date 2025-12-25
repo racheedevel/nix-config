@@ -2,12 +2,13 @@
 
 {
   imports = [
-    ./shell.nix
-    ./neovim.nix
-    ./kitty.nix
     ./git.nix
     ./hyprland.nix
+    ./kitty.nix
+    ./neovim.nix
     ./rofi.nix
+    ./shell.nix
+    ./theme.nix
     ./waybar.nix
   ];
 
@@ -24,6 +25,12 @@
     bun
     python3
     nixfmt-rfc-style
+    python315
+    uv
+    zig
+    ruby
+    bundler
+    nodejs
 
     # Day-to-day
     chromium

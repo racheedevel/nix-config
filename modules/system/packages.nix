@@ -27,6 +27,7 @@
     bat
     unzip
     psmisc # killall / fuser / pstree / etc
+    antidote
   ];
 
   programs.firefox.enable = true;

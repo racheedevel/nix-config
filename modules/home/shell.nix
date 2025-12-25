@@ -20,7 +20,6 @@
   # };
 
   home.packages = with pkgs; [
-    antidote
     zsh
     eza
     bat

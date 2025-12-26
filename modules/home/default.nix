@@ -14,6 +14,7 @@
     ./waybar.nix
     ./yazi.nix
     ./zathura.nix
+    ./xdg-directories.nix
   ];
 
   home.username = "rachee";
@@ -21,6 +22,13 @@
   home.stateVersion = "25.11";
 
   programs.home-manager.enable = true;
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/rachee/.os";
+  };
 
   # Extra packages managed at user level
   home.packages = with pkgs; [

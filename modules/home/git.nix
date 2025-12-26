@@ -71,4 +71,11 @@
       disableStartupPopups = false;
     };
   };
+
+  programs = {
+    gh.enable = true;
+    git-cliff.enable = true;
+    gh-dash.enable = true;
+    jujutsu.enable = true;
+  };
 }

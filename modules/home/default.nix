@@ -44,6 +44,7 @@
 
     # Day-to-day
     chromium
+    optnix
 
     # Fonts
     iosevka

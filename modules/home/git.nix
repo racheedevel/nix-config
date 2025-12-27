@@ -33,6 +33,7 @@
   home.packages = with pkgs; [
     github-cli
     lazygit
+    glab
   ];
   programs.delta = {
     enable = true;

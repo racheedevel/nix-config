@@ -14,6 +14,7 @@
     ../../modules/system/gpu.nix
     ../../modules/system/fonts.nix
     ../../modules/system/docker.nix
+    ../../modules/system/keyring.nix
   ];
 
   # Boot

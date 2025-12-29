@@ -71,6 +71,8 @@
     "nix-command"
     "flakes"
   ];
+
+  nix.settings.trusted-users = [ "root" "rachee" ];
   nixpkgs.config.allowUnfree = true;
 
   environment.sessionVariables = {

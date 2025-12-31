@@ -1,0 +1,8 @@
+{
+  services.postgres = {
+    enable = true;
+    package = pkgs.postgresql_16;
+    initialDatabases = [{ name = "{{PROJECT_NAME_SNAKE}}"; }];
+    port = 5432;
+  };
+}

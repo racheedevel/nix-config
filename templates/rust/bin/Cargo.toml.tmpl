@@ -1,0 +1,17 @@
+[package]
+name = "{{PROJECT_NAME}}"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+rust-version = "1.92"
+description = "{{PROJECT_NAME}}"
+
+[[bin]]
+name = "{{PROJECT_NAME_SNAKE}}"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive", "env"] }
+serde = { version = "1", features = ["derive"] }
+
+[dev-dependencies]

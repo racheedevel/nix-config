@@ -8,6 +8,7 @@
     ./hyprland.nix
     ./kitty.nix
     ./kubernetes.nix
+    ./mkproject.nix
     ./neovim.nix
     ./rofi.nix
     ./shell.nix
@@ -33,6 +34,40 @@
 
   # Extra packages managed at user level
   home.packages = with pkgs; [
+    # Core
+    zip
+    xz
+    unzip
+    fzf
+    ripgrep
+    jq
+    yq-go
+    dnsutil # dig, nslookup
+    ldns # dig replacement, `drill`
+    socat # nc replacement
+    nmap
+    ipcalc
+
+    file
+    which
+    tree
+    gnused
+    gnutar
+    gawk
+    zstd
+    btop
+    iotop
+    iftop
+    lsof # open processes/files
+    strace # system trace
+    ltrace # library call trace
+    ethtool
+    pciutils
+    usbutils
+
+    # nix
+    nix-output-monitor
+
     # Dev tools
     rustup
     bun

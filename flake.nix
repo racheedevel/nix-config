@@ -47,5 +47,59 @@
           }
         ];
       };
+
+      templates = {
+        rust = {
+          path = ./templates/rust/bin;
+          description = "Rust binary project with Crane";
+        };
+
+        rust-lib = {
+          path = ./templates/rust/lib;
+          description = "Rust library project";
+        };
+
+        rust-ws = {
+          path = ./templates/rust/ws;
+          description = "Rust workspace";
+        };
+
+
+        python = {
+          path = ./templates/python/bare;
+          description = "Python env with UV";
+        };
+
+        pylib = {
+          path = ./templates/python/lib;
+          description = "Python library";
+        };
+
+        pyapi = {
+          path = ./templates/python/api;
+          description = "FastAPI App";
+        };
+
+        pynb = {
+          path = ./templates/python/notebook;
+          description = "Marimo env";
+        };
+
+
+        go-api = {
+          path = ./templates/go/api;
+          description = "Chi API";
+        };
+
+        go-bin = {
+          path = ./templates/go/bin;
+          description = "Go Binary";
+        };
+
+        golang = {
+          path = ./templates/go/bare;
+          description = "Basic go env";
+        };
+      }
     };
 }

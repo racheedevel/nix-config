@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./cli-tools.nix
     ./dev.nix
     ./git.nix
     ./hyprland.nix
@@ -12,9 +13,9 @@
     ./shell.nix
     ./theme.nix
     ./waybar.nix
+    ./xdg-directories.nix
     ./yazi.nix
     ./zathura.nix
-    ./xdg-directories.nix
   ];
 
   home.username = "rachee";

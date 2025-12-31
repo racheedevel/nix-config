@@ -1,9 +1,17 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   programs.hyprland.enable = true;
 
   services.displayManager.ly.enable = true;
+
+  security.pam.services.ly.rules.auth.fprintd.enable = lib.mkForce false;
+
   security.polkit.enable = true;
   hardware.graphics.enable = true;
 

@@ -5,7 +5,7 @@
     enable = true;
     defaultEditor = true;
     viAlias = true;
-    vimAlias = true;
+    # vimAlias = true;
 
     extraPackages = with pkgs; [
       lua-language-server

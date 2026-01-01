@@ -41,7 +41,7 @@
       fx = "flux";
       cat = "bat";
       rebuild = "sudo nixos-rebuild switch --flake ~/.os#rachee-fw";
-      update = "nix flake update ~/.os";
+      update = "nix flake update --flake ~/.os";
       dcu = "docker compose up --build -d";
       dcd = "docker compose down";
       dcl = "docker compose logs -f";

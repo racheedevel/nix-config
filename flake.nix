@@ -100,6 +100,6 @@
           path = ./templates/go/bare;
           description = "Basic go env";
         };
-      }
+      };
     };
 }

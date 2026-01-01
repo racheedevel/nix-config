@@ -42,7 +42,7 @@
     ripgrep
     jq
     yq-go
-    dnsutil # dig, nslookup
+    dnsutils # dig, nslookup
     ldns # dig replacement, `drill`
     socat # nc replacement
     nmap
@@ -67,6 +67,7 @@
 
     # nix
     nix-output-monitor
+    neofetch
 
     # Dev tools
     rustup

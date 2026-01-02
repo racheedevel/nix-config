@@ -18,14 +18,14 @@
     TALOSCONFIG = config.home.homeDirectory + "/.talos/talosconfig";
   };
 
-  xdg.configFile."k9s/config.yaml".text = ''
-    k9s:
-        refreshRate: 2
-        maxConnRetry: 5
-        enableMouse: true
-        headless: false
-        ui:
-            enableMouse: true
-            skin: dracula
-  '';
+  # xdg.configFile."k9s/config.yaml".text = ''
+  #   k9s:
+  #       refreshRate: 2
+  #       maxConnRetry: 5
+  #       enableMouse: true
+  #       headless: false
+  #       ui:
+  #           enableMouse: true
+  #           skin: dracula
+  # '';
 }

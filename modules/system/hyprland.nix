@@ -6,7 +6,37 @@
 }:
 
 {
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
+  xdg = {
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+      config = {
+        common = {
+          default = [ "gtk" ];
+          "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
+          "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+        };
+        hyprland = {
+          default = [
+            "gtk"
+            "hyprland"
+          ];
+          "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
+        };
+        wlroots = {};
+      };
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+        pkgs.xdg-desktop-portal-hyprland
+        pkgs.xdg-desktop-portal-termfilechooser
+      ];
+    };
+  };
+  
 
   services.displayManager.ly.enable = true;
 
@@ -17,10 +47,10 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  environment.etc."wayland-sessions/hyprland.desktop".text = ''
-    [Desktop Entry]
-    Name=Hyprland
-    Exec=Hyprland
-    Type=Application
-  '';
+  # environment.etc."wayland-sessions/hyprland.desktop".text = ''
+  #   [Desktop Entry]
+  #   Name=Hyprland
+  #   Exec=Hyprland
+  #   Type=Application
+  # '';
 }

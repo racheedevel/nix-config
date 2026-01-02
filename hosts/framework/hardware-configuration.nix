@@ -19,7 +19,7 @@
       options = [ "subvol=@root" ];
     };
 
-  boot.initrd.luks.devices."nixcrypt".device = "/dev/disk/by-uuid/278df479-352c-4eef-a4b8-b60a8ab6d39c";
+  boot.initrd.luks.devices."nixcrypt".device = "/dev/disk/by-uuid/a9689428-8770-495a-9dbd-2c95531c8d20";
 
   fileSystems."/home" =
     { device = "/dev/mapper/nixcrypt";
@@ -34,7 +34,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/A572-07DF";
+    { device = "/dev/disk/by-uuid/3249-3BCD";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };

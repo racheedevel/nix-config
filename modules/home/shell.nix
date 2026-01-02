@@ -83,14 +83,13 @@
       VISUAL = "nvim";
       LANG = "en_US.UTF-8";
       BROWSER = "chromium";
-      SSH_ASKPASS = "/usr/lib/seahorse/ssh-askpass";
     };
 
-    profileExtra = ''
-      if uwsm check may-start && uwsm select; then
-          exec uwsm start default
-      fi
-    '';
+    # profileExtra = ''
+    #   if uwsm check may-start && uwsm select; then
+    #       exec uwsm start default
+    #   fi
+    # '';
 
     initContent = ''
       unsetopt menu_complete
@@ -184,9 +183,9 @@
   #     recursive = false;
   # };
 
-  home.file.".secrets" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/rachee/.os/secrets";
-  };
+  # home.file.".secrets" = {
+  #   source = config.lib.file.mkOutOfStoreSymlink "/home/rachee/.os/secrets";
+  # };
 
   home.sessionVariables = {
     ZDOTDIR = config.home.homeDirectory + "/.zsh";
@@ -215,10 +214,10 @@
     enableTransience = true;
   };
 
-  xdg.configFile."starship.toml" = {
-    source = ../../configs/starship/starship.toml;
-    recursive = true;
-    force = true;
-  };
+  # xdg.configFile."starship.toml" = {
+  #   source = ../../configs/starship/starship.toml;
+  #   recursive = true;
+  #   force = true;
+  # };
 
 }

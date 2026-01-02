@@ -15,13 +15,10 @@
     source = ../../configs/vim/.vimrc;
   };
 
-  home.file.".vim" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/rachee/.os/configs/vim/.vim";
-  };
 
-  programs.gemini-cli = {
-    enable = true;
-  };
+  #programs.gemini-cli = {
+  #  enable = true;
+  #};
 
   services.yubikey-agent = {
     enable = true;

@@ -214,10 +214,5 @@
     enableTransience = true;
   };
 
-  # xdg.configFile."starship.toml" = {
-  #   source = ../../configs/starship/starship.toml;
-  #   recursive = true;
-  #   force = true;
-  # };
 
 }

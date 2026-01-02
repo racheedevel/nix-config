@@ -11,6 +11,7 @@
 
   gtk = {
     enable = true;
+    colorScheme = "dark";
     cursorTheme = {
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;

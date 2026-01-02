@@ -47,6 +47,8 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  environment.sessionVariables.XDG_CURRENT_DESKTOP = "Hyprland:X-NIXOS-SYSTEMD-AWARE";
+
   # environment.etc."wayland-sessions/hyprland.desktop".text = ''
   #   [Desktop Entry]
   #   Name=Hyprland

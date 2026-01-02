@@ -47,6 +47,9 @@
     socat # nc replacement
     nmap
     ipcalc
+    swappy
+    sttr
+    stow
 
     file
     which
@@ -60,7 +63,7 @@
     iftop
     lsof # open processes/files
     strace # system trace
-    ltrace # library call trace
+    #ltrace # library call trace
     ethtool
     pciutils
     usbutils

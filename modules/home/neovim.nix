@@ -17,6 +17,4 @@
     ];
   };
 
-  # Mutable symlink - points directly to your repo, not nix store
-  # xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/rachee/.os/configs/nvim";
 }

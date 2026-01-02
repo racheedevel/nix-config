@@ -86,6 +86,12 @@
       SSH_ASKPASS = "/usr/lib/seahorse/ssh-askpass";
     };
 
+    profileExtra = ''
+      if uwsm check may-start && uwsm select; then
+          exec uwsm start default
+      fi
+    '';
+
     initContent = ''
       unsetopt menu_complete
       unsetopt auto_menu

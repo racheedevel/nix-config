@@ -11,11 +11,6 @@
     vim-full
   ];
 
-  home.file.".vimrc" = {
-    source = ../../configs/vim/.vimrc;
-  };
-
-
   #programs.gemini-cli = {
   #  enable = true;
   #};

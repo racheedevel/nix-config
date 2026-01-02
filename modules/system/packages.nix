@@ -33,6 +33,7 @@
     go
     rbenv
     atuin
+    xdg-desktop-portal-termfilechooser
   ];
 
   programs.firefox.enable = true;

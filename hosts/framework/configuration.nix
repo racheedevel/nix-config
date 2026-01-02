@@ -15,6 +15,7 @@
     ../../modules/system/fonts.nix
     ../../modules/system/docker.nix
     ../../modules/system/keyring.nix
+    ../../modules/system/shared-drive.nix
   ];
 
   # Boot
@@ -25,8 +26,6 @@
   ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.luks.devices."nixcrypt".device =
-    "/dev/disk/by-uuid/278df479-352c-4eef-a4b8-b60a8ab6d39c";
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Network
@@ -42,11 +41,15 @@
   users.users.rachee = {
     isNormalUser = true;
     shell = pkgs.zsh;
+    initialPassword = "changeme";
     extraGroups = [
       "wheel"
       "networkmanager"
       "video"
     ];
+  };
+  users.users.root = {
+    home = "/root";
   };
 
   security.sudo.enable = false;

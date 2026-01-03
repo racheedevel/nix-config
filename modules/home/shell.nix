@@ -25,7 +25,7 @@
     };
 
     shellAliases = {
-      ls = "eza --group-directories-first --color -a --icons -l -o --no-symlinks";
+      ls = "eza --group-directories-first --color -a --icons -l -o --show-symlinks --dereference";
       ll = "eza --group-directories-first --color -a --icons -l -o";
       ts = "tailscale";
       rse = "nvim Cargo.toml";

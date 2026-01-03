@@ -48,11 +48,18 @@
       dcr = "docker compose restart";
       dcp = "docker compose ps";
       dcs = "docker compose stop -t 0";
+      sctl = "systemctl --user";
     };
 
     shellGlobalAliases = {
       UUID = "$(uuidgen | tr -d \\n)";
       G = "| grep";
+      WORK = "cd projects securely";
+      GH = "cd projects github";
+      GL = "cd projects gitlab";
+      GG = "cd projects dev";
+      CFG = "cd shared config";
+      SCFG = "cd shared secrets";
     };
 
     sessionVariables = {
@@ -162,7 +169,27 @@
           eval "$*" > "$_zfunc/_$name" 2>/dev/null || return 0
       }
 
-      [[ -f ~/.secrets/env-secrets.sh ]] && source ~/.secrets/env-secrets.sh
+      rb_init() {
+          eval "$(rbenv init -)"
+      }
+
+      nvm_init() {
+          source /usr/share/nvm/init-nvm.sh
+      }
+
+      lg()
+      {
+          export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+          lazygit "$@"
+
+          if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+                  cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+                  rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+          fi
+      }
+
+        [[ -f ~/.secrets/env-secrets.sh ]] && source ~/.secrets/env-secrets.sh
     '';
   };
 
@@ -177,15 +204,6 @@
     figlet
     jp2a
   ];
-
-  # home.file.".zsh" = {
-  #     source = config.lib.file.mkOutOfStoreSymlink "/home/rachee/.os/configs/zsh";
-  #     recursive = false;
-  # };
-
-  # home.file.".secrets" = {
-  #   source = config.lib.file.mkOutOfStoreSymlink "/home/rachee/.os/secrets";
-  # };
 
   home.sessionVariables = {
     ZDOTDIR = config.home.homeDirectory + "/.zsh";
@@ -213,6 +231,5 @@
     enableZshIntegration = true;
     enableTransience = true;
   };
-
 
 }

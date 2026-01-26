@@ -18,6 +18,11 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -27,6 +32,7 @@
       home-manager,
       neovim-nightly-overlay,
       zen-browser,
+      nix-darwin,
       ...
     }@inputs:
     {
@@ -45,6 +51,13 @@
             home-manager.useUserPackages = true;
             home-manager.users.rachee = import ./modules/home;
           }
+        ];
+      };
+
+      darwinConfigurations.mac = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit inputs self; };
+        modules = [
+          ./hosts/mac/configuration.nix
         ];
       };
 

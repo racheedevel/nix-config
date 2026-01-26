@@ -1,0 +1,36 @@
+{
+  pkgs,
+  self,
+  ...
+}:
+
+{
+  imports = [
+    ../../modules/darwin/homebrew.nix
+    ../../modules/darwin/shell.nix
+    ../../modules/darwin/programs.nix
+    ../../modules/darwin/system.nix
+  ]
+  homebrew = {
+    enable = true;
+    brews = [
+      "lazygit"
+    ];
+  };
+
+
+  # Necessary for using flakes on this system.
+  nix.settings.experimental-features = "nix-command flakes";
+
+  # Set Git commit hash for darwin-version.
+  system.configurationRevision = self.rev or self.dirtyRev or null;
+
+  system.primaryUser = "rachee";
+
+  # Used for backwards compatibility, please read the changelog before changing.
+  # $ darwin-rebuild changelog
+  system.stateVersion = 6;
+
+  # The platform the configuration will be used on.
+  nixpkgs.hostPlatform = "aarch64-darwin";
+}

@@ -10,13 +10,7 @@
     ../../modules/darwin/shell.nix
     ../../modules/darwin/programs.nix
     ../../modules/darwin/system.nix
-  ]
-  homebrew = {
-    enable = true;
-    brews = [
-      "lazygit"
-    ];
-  };
+  ];
 
 
   # Necessary for using flakes on this system.

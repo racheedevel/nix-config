@@ -10,18 +10,36 @@
     enable = true;
     # Tools
     brews = [
+	  "atuin"
+      "vivid"
+      "antidote"
+      "zoxide"
+      "eza"
+      "fnm"
+      "just"
+      "jujutsu"
+      "bat"
+      "kubectl"
+      "talosctl"
+      "kustomize"
+      "kubectx"
+      "hcloud"
+      "direnv"
       "lazygit"
       "glab"
+      "bun"
       "gh"  
     ];
 
     # AppStore Apps
-    masApps = [];
+    # masApps = [];
     # Apps
-    casks = [];
+    # casks = [];
     # WhaleBrews
-    whalebrews = [];
+    # whalebrews = [];
     # Taps
-    taps = [];
+    taps = [
+      "oven-sh/bun"
+    ];
   };
 }
